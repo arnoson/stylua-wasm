@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>hello-wasm example</title>
+    <style>
+      textarea {
+        display: block;
+        width: 100%;
+        height: 50vh;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea>
+function test()
+print(  'hello'  )
+end
+    </textarea>
+    <button>Format</button>
+    <script type="module">
+      import init, { format } from "./pkg/stylua_wasm.js";
+
+      const textarea = document.querySelector("textarea");
+      const button = document.querySelector("button");
+
+      const options = {
+        column_width: 80,
+        indent_type: 0,
+        indent_width: 2,
+      };
+
+      init().then(() => {
+        button.addEventListener(
+          "click",
+          () => (textarea.value = format(textarea.value, options, 1))
+        );
+      });
+    </script>
+  </body>
+</html>
