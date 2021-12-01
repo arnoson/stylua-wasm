@@ -12,7 +12,7 @@ npm i stylua-wasm
 import init, {
   format,
   LineEndings,
-  IdentType,
+  IndentType,
   QuoteStyle,
   OutputVerification,
 } from 'stylua-wasm'
@@ -21,8 +21,8 @@ init().then(() => {
   const config = {
     column_width: 80,
     line_endings: LineEndings.Unix,
-    ident_width: 2,
-    ident_type: IdentType.Spaces,
+    indent_width: 2,
+    indent_type: IdentType.Spaces,
     quote_style: QuoteStyle.AutoPreferSingle,
     no_call_parentheses: false,
   }
