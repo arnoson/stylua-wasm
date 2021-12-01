@@ -56,7 +56,7 @@ init(wasmUrl).then(() =>
 ### API
 
 ```ts
-export interface Config {
+interface Config {
   column_width?: number
   line_endings?: LineEndings
   indent_type?: IndentType
